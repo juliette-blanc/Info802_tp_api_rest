@@ -22,5 +22,5 @@ class CalculeTemps(Resource):
 api.add_resource(CalculeTemps, '/temps/<int:autonomie>/<int:temps_recharge>/<int:distance_parcours>/<int:vitesse_moyenne>')
 
 if __name__ == '__main__':
-    app.run(host="localhost", port=port)
-    # app.run(host='0.0.0.0', port=port)
+    # app.run(host="localhost", port=port)
+    app.run(host='0.0.0.0', port=port)
