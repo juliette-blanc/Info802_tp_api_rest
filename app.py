@@ -27,7 +27,7 @@ class CalculeTempsMaps(Resource):
             nb_recharge += 1
         nb_recharge += distance_parcours // autonomie
         temps_parcours += nb_recharge * temps_recharge
-        return {"temps_total" : temps_parcours}
+        return {"temps_total" : temps_parcours, "nb_recharge": nb_recharge}
 
 
 api.add_resource(CalculeTemps, '/temps/<int:autonomie>/<int:temps_recharge>/<int:distance_parcours>/<int:vitesse_moyenne>')
