@@ -18,6 +18,7 @@ class CalculeTemps(Resource):
         temps_parcours += nb_recharge * temps_recharge
         return {"temps_total": temps_parcours}
 
+
 class CalculeTempsMaps(Resource):
     def get(self, autonomie, temps_recharge, distance_parcours, temps_total):
         temps_parcours = temps_total * 60
@@ -28,7 +29,9 @@ class CalculeTempsMaps(Resource):
         temps_parcours += nb_recharge * temps_recharge
         return {"temps_total" : temps_parcours}
 
+
 api.add_resource(CalculeTemps, '/temps/<int:autonomie>/<int:temps_recharge>/<int:distance_parcours>/<int:vitesse_moyenne>')
+api.add_resource(CalculeTempsMaps, '/tempsMaps/<int:autonomie>/<int:temps_recharge>/<int:distance_parcours>/<int:temps_total>')
 
 if __name__ == '__main__':
     # app.run(host="localhost", port=port)
