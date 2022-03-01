@@ -21,7 +21,7 @@ class CalculeTemps(Resource):
 
 class CalculeTempsMaps(Resource):
     def get(self, autonomie, temps_recharge, distance_parcours, temps_total):
-        temps_parcours = temps_total * 60
+        temps_parcours = temps_total // 60
         nb_recharge = 0;
         if distance_parcours % autonomie != 0:
             nb_recharge += 1
